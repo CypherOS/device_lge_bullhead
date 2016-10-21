@@ -1,0 +1,14 @@
+[
+  {
+    "repository":  "android_kernel_lge_bullhead",
+    "target_path": "kernel/lge/bullhead",
+    "branch":      "cm-14.0",
+    "remote":      "cm"
+  },
+  {
+    "repository": "proprietary_vendor_lge",
+    "target_path": "vendor/lge",
+    "branch":      "n7.0",
+    "remote":      "cypher"
+  }
+]
