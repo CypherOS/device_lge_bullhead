@@ -105,13 +105,13 @@ HAVE_ADRENO_SOURCE:= false
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 
 # Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
+#ifeq ($(HOST_OS),linux)
+#  ifneq ($(TARGET_BUILD_VARIANT),eng)
+#    ifeq ($(WITH_DEXPREOPT),)
+#      WITH_DEXPREOPT := true
+#    endif
+#  endif
+#endif
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
@@ -151,10 +151,6 @@ BOARD_QTI_CAMERA_32BIT_ONLY := true
 
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
-
-USE_CLANG_PLATFORM_BUILD := true
-
-USE_CLANG_PLATFORM_BUILD := true
 
 # CM Hardware
 BOARD_USES_CYANOGEN_HARDWARE := true

@@ -382,6 +382,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # If data_no_toggle is 1 then dormancy indications will come with screen off.
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.data_no_toggle=1
+	
+# Allow tethering without provisioning app
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tethering.noprovisioning=true
 
 # Adjust STK popup operation
 PRODUCT_PROPERTY_OVERRIDES += \
