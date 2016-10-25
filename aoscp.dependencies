@@ -6,9 +6,9 @@
     "remote":      "cm"
   },
   {
-    "repository": "TheMuppets/proprietary_vendor_lge",
+    "repository": "proprietary_vendor_lge",
     "target_path": "vendor/lge",
-    "remote": "github",
+    "remote": "tm",
     "branch": "cm-14.0"
   }
 ]
