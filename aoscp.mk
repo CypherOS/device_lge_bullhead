@@ -1,9 +1,6 @@
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/aoscp/configs/common_full_phone.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/aoscp/configs/nfc_enhanced.mk)
-
 # Inherit device configuration
 $(call inherit-product, device/lge/bullhead/aosp_bullhead.mk)
 
