@@ -2,13 +2,13 @@
   {
     "repository":  "kernel_lge_bullhead",
     "target_path": "kernel/lge/bullhead",
-    "branch":      "nougat-mr1",
+    "branch":      "nougat-mr2",
     "remote":      "aoscp"
   },
   {
     "repository":  "proprietary_vendor_lge",
     "target_path": "vendor/lge",
-    "branch":      "nougat-mr1",
+    "branch":      "nougat-mr2",
 	"remote":      "aoscp"
   }
 ]
