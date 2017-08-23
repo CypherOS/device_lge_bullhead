@@ -4,5 +4,11 @@
     "target_path": "kernel/lge/bullhead",
     "branch":      "audition/oreo-release",
     "remote":      "aoscp"
+  },
+  {
+    "repository":  "proprietary_vendor_lge",
+    "target_path": "vendor/lge",
+    "branch":      "audition/oreo-release",
+	"remote":      "aoscp"
   }
 ]
