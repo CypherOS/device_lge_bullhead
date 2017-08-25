@@ -2339,7 +2339,6 @@ void *QCameraPostProcessor::dataSaveRoutine(void *data)
             break;
         case CAMERA_CMD_TYPE_DO_NEXT_JOB:
             {
-                CDBG_HIGH("%s: Do next job, active is %d", __func__, is_active);
 
                 qcamera_jpeg_evt_payload_t *job_data = (qcamera_jpeg_evt_payload_t *) pme->m_inputSaveQ.dequeue();
                 if (job_data == NULL) {
@@ -2348,8 +2347,6 @@ void *QCameraPostProcessor::dataSaveRoutine(void *data)
                 }
 
                 pme->m_ongoingJpegQ.flushNodes(matchJobId, (void*)&job_data->jobId);
-
-                CDBG_HIGH("[KPI Perf] %s : jpeg job %d", __func__, job_data->jobId);
 
                 if (is_active == TRUE) {
                     memset(saveName, '\0', sizeof(saveName));
@@ -2362,16 +2359,6 @@ void *QCameraPostProcessor::dataSaveRoutine(void *data)
                     if (file_fd >= 0) {
                         ssize_t written_len = write(file_fd, job_data->out_data.buf_vaddr,
                                 job_data->out_data.buf_filled_len);
-                        if ((ssize_t)job_data->out_data.buf_filled_len != written_len) {
-                            ALOGE("%s: Failed save complete data %d bytes "
-                                  "written instead of %d bytes!",
-                                  __func__, written_len,
-                                  job_data->out_data.buf_filled_len);
-                        } else {
-                            CDBG_HIGH("%s: written number of bytes %d\n",
-                                __func__, written_len);
-                        }
-
                         close(file_fd);
                     } else {
                         ALOGE("%s: fail t open file for saving", __func__);
@@ -2525,7 +2512,6 @@ void *QCameraPostProcessor::dataProcessRoutine(void *data)
             break;
         case CAMERA_CMD_TYPE_DO_NEXT_JOB:
             {
-                CDBG_HIGH("%s: Do next job, active is %d", __func__, is_active);
                 if (is_active == TRUE) {
                     qcamera_jpeg_data_t *jpeg_job =
                         (qcamera_jpeg_data_t *)pme->m_inputJpegQ.dequeue();
