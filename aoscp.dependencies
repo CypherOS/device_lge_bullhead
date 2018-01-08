@@ -1,0 +1,14 @@
+[
+  {
+    "repository":  "kernel_lge_bullhead",
+    "target_path": "kernel/lge/bullhead",
+    "branch":      "oreo-mr1-release",
+    "remote":      "aoscp"
+  },
+  {
+    "repository":  "proprietary_vendor_lge",
+    "target_path": "vendor/lge",
+    "branch":      "oreo-mr1-release",
+	"remote":      "aoscp"
+  }
+]
