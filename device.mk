@@ -1,4 +1,4 @@
-#
+
 # Copyright (C) 2016 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -167,10 +167,14 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     gralloc.msm8992 \
-    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl \
-    hwcomposer.msm8992 \
+    android.hardware.graphics.mapper@2.0-impl
+
+# HW Composer
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-impl:64 \
+    android.hardware.graphics.composer@2.1-service \
     libgenlock \
     memtrack.msm8992 \
     android.hardware.memtrack@1.0-impl
@@ -179,14 +183,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.bullhead \
     lights.vts \
-    android.hardware.light@2.0-impl
+    android.hardware.light@2.0-impl:64
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-impl:32 \
 
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -223,9 +227,9 @@ PRODUCT_PACKAGES += \
     rmnetcli
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.soundtrigger@2.0-impl
+    android.hardware.audio@4.0-impl:32 \
+    android.hardware.audio.effect@4.0-impl:32 \
+    android.hardware.soundtrigger@2.1-impl:32
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl
@@ -239,12 +243,12 @@ PRODUCT_PACKAGES += \
     libnfc-nci \
     NfcNci \
     Tag \
-    android.hardware.nfc@1.0-impl \
+    android.hardware.nfc@1.1-service \
     nfc_nci.msm8992 \
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    android.hardware.keymaster@3.0-impl:64
 
 # Vibrator HAL
 PRODUCT_PACKAGES += \
@@ -277,6 +281,10 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@3.2-impl
 
+# health HAL
+PRODUCT_PACKAGES += \
+	android.hardware.health@2.0-service.bullhead
+
 # Sensor & activity_recognition HAL
 TARGET_USES_NANOHUB_SENSORHAL := true
 NANOHUB_SENSORHAL_LID_STATE_ENABLED := true
@@ -286,13 +294,12 @@ NANOHUB_SENSORHAL_DIRECT_REPORT_ENABLED := true
 PRODUCT_PACKAGES += \
     sensors.bullhead \
     activity_recognition.bullhead \
-    context_hub.default \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.contexthub@1.0-impl \
+    android.hardware.sensors@1.0-impl:64 \
+    android.hardware.contexthub@1.0-impl:64 \
 
 # new gatekeeper HAL
 PRODUCT_PACKAGES +=                         \
-    android.hardware.gatekeeper@1.0-impl    \
+    android.hardware.gatekeeper@1.0-impl:64    \
 
 ifeq ($(TARGET_USES_CHINOOK_SENSORHUB),true)
 PRODUCT_PACKAGES += \
@@ -478,10 +485,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.data_con_rprt=true
 
-# Set bluetooth soc to rome
-PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=rome
-
 # Set Bluetooth transport initialization timeout
 PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.enable_timeout_ms=12000
@@ -491,8 +494,22 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
-    libbt-vendor \
-    android.hardware.bluetooth@1.0-impl
+    android.hardware.bluetooth@1.0-impl-qti:64 \
+    android.hardware.bluetooth@1.0-service-qti \
+    android.hardware.bluetooth@1.0-service-qti.rc
+
+# Bluetooth SoC
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.qcom.bluetooth.soc=rome
+
+# Property for loading BDA from bdaddress module in kernel
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.bt.bdaddr_path=/persist/bdaddr.txt
+
+# Bluetooth WiPower
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.bluetooth.emb_wp_mode=true \
+    ro.vendor.bluetooth.wipower=true
 
 # limit dex2oat threads to improve thermals
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -525,7 +542,7 @@ PRODUCT_PACKAGES += \
 
 #GNSS HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
+    android.hardware.gnss@1.0-impl:64
 
 #USB HAL
 PRODUCT_PACKAGES += \
