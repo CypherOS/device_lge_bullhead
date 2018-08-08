@@ -132,6 +132,13 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Build a separate vendor.img
 TARGET_COPY_OUT_VENDOR := vendor
 
+# Vendor image information
+# Use only if target uses source vendor image
+ifeq ($(TARGET_USES_SOURCE_VENDOR_IMAGE),true)
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_PARTITION_SIZE := 260046848
+endif
+
 TARGET_RECOVERY_FSTAB = device/lge/bullhead/rootdir/fstab.bullhead
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/bullhead
