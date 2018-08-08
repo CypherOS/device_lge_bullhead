@@ -175,8 +175,7 @@ PRODUCT_PACKAGES += \
 
 # HW Composer
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-impl:64 \
-    android.hardware.graphics.composer@2.1-service \
+    hwcomposer.msm8992 \
     libgenlock \
     memtrack.msm8992 \
     android.hardware.memtrack@1.0-impl
