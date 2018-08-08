@@ -75,7 +75,7 @@ BOARD_USES_SECURE_SERVICES := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm8992
 TARGET_BOOTLOADER_BOARD_NAME := bullhead
-TARGET_BOARD_INFO_FILE := device/lge/bullhead/board-info.txt
+TARGET_BOARD_INFO_FILE := device/lge/bullhead/configs/board-info.txt
 TARGET_NO_RPC := true
 
 BOARD_EGL_CFG := device/lge/bullhead/egl/egl.cfg
@@ -141,7 +141,7 @@ endif
 
 TARGET_RECOVERY_FSTAB = device/lge/bullhead/rootdir/fstab.bullhead
 
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/bullhead
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/bullhead/releasetools
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
@@ -169,15 +169,15 @@ NXP_CHIP_TYPE := 2
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
-TARGET_FS_CONFIG_GEN += device/lge/bullhead/config.fs
+TARGET_FS_CONFIG_GEN += device/lge/bullhead/configs/config.fs
 
 -include vendor/lge/bullhead/BoardConfigVendor.mk
 
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/bullhead-setup.sh
 
-DEVICE_MANIFEST_FILE := device/lge/bullhead/manifest.xml
-DEVICE_MATRIX_FILE := device/lge/bullhead/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := device/lge/bullhead/manifests/manifest.xml
+DEVICE_MATRIX_FILE := device/lge/bullhead/manifests/compatibility_matrix.xml
 
 ifeq ($(TARGET_PRODUCT),aosp_bullhead_svelte)
 BOARD_KERNEL_CMDLINE += mem=1024M maxcpus=2
