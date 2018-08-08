@@ -540,6 +540,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.notify_nfc=1
 
+# Disable sdcardfs
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=0
+
 # Power HAL
 PRODUCT_PACKAGES += \
     power.bullhead \
