@@ -296,10 +296,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@3.2-impl
 
-# health HAL
-PRODUCT_PACKAGES += \
-	android.hardware.health@2.0-service.bullhead
-
 # Sensor & activity_recognition HAL
 TARGET_USES_NANOHUB_SENSORHAL := true
 NANOHUB_SENSORHAL_LID_STATE_ENABLED := true
