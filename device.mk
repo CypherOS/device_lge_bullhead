@@ -133,7 +133,7 @@ PRODUCT_COPY_FILES += \
 
 # NFC library
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/nfc/libpn48ad_fw.so:$(TARGET_COPY_OUT_VENDOR)/lib/libpn48ad_fw.so
+    device/lge/bullhead/nfc/libpn548ad_fw.so:$(TARGET_COPY_OUT_VENDOR)/lib/libpn548ad_fw.so
 
 # For WiFi
 PRODUCT_COPY_FILES += \
