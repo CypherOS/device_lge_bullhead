@@ -507,7 +507,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl-qti:64 \
     android.hardware.bluetooth@1.0-service-qti \
-    android.hardware.bluetooth@1.0-service-qti.rc
+    android.hardware.bluetooth@1.0-service-qti.rc \
+    libbt-vendor
 
 # Bluetooth SoC
 PRODUCT_PROPERTY_OVERRIDES += \
