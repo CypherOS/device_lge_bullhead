@@ -277,7 +277,8 @@ PRODUCT_PACKAGES += \
     wificond \
     wifilogd \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    netutils-wrapper-1.0
 
 # Camera
 PRODUCT_PACKAGES += \
