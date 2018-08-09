@@ -131,6 +131,10 @@ PRODUCT_COPY_FILES += \
     device/lge/bullhead/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     device/lge/bullhead/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
+# NFC library
+PRODUCT_COPY_FILES += \
+    device/lge/bullhead/nfc/libpn48ad_fw.so:$(TARGET_COPY_OUT_VENDOR)/lib/libpn48ad_fw.so
+
 # For WiFi
 PRODUCT_COPY_FILES += \
     device/lge/bullhead/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
