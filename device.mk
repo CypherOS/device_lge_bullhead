@@ -65,8 +65,8 @@ PRODUCT_COPY_FILES += \
 
 #Sound Trigger
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
-    device/lge/bullhead/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
+    device/lge/bullhead/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    device/lge/bullhead/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
 
 # Input device files
 PRODUCT_COPY_FILES += \
