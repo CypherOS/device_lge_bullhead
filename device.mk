@@ -252,6 +252,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/lge/bullhead/gps/gps.conf:system/etc/gps.conf
 
+# GPS HAL
+PRODUCT_PACKAGES += \
+	gps.msm8992 \
+	libgps.utils \
+	android.hardware.gnss@1.0-impl:64 \
+	android.hardware.gnss@1.0-impl
+
 # NFC packages
 PRODUCT_PACKAGES += \
     libnfc-nci \
