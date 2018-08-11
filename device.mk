@@ -290,7 +290,8 @@ PRODUCT_PACKAGES += \
     wifilogd \
     wpa_supplicant \
     wpa_supplicant.conf \
-    netutils-wrapper-1.0
+    netutils-wrapper-1.0 \
+    libwifikeystorehal
 
 # Camera
 PRODUCT_PACKAGES += \
