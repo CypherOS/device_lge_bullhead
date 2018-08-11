@@ -242,9 +242,9 @@ PRODUCT_PACKAGES += \
     rmnetcli
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio@4.0-impl:32 \
-    android.hardware.audio.effect@4.0-impl:32 \
-    android.hardware.soundtrigger@2.1-impl:32
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.soundtrigger@2.0-impl
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl
