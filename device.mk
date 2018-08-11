@@ -183,7 +183,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     gralloc.msm8992 \
-    android.hardware.graphics.allocator@2.0-impl:64 \
+    android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.mapper@2.0-impl
 
@@ -198,14 +198,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.bullhead \
     lights.vts \
-    android.hardware.light@2.0-impl:64
+    android.hardware.light@2.0-impl
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl:32 \
+    android.hardware.drm@1.0-impl \
 
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -257,7 +257,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	gps.msm8992 \
 	libgps.utils \
-	android.hardware.gnss@1.0-impl:64 \
 	android.hardware.gnss@1.0-impl
 
 # NFC packages
@@ -270,7 +269,7 @@ PRODUCT_PACKAGES += \
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl:64
+    android.hardware.keymaster@3.0-impl
 
 # Vibrator HAL
 PRODUCT_PACKAGES += \
@@ -314,12 +313,12 @@ NANOHUB_SENSORHAL_DIRECT_REPORT_ENABLED := true
 PRODUCT_PACKAGES += \
     sensors.bullhead \
     activity_recognition.bullhead \
-    android.hardware.sensors@1.0-impl:64 \
-    android.hardware.contexthub@1.0-impl.nanohub:64
+    android.hardware.sensors@1.0-impl \
+    android.hardware.contexthub@1.0-impl.nanohub
 
 # new gatekeeper HAL
 PRODUCT_PACKAGES +=                         \
-    android.hardware.gatekeeper@1.0-impl:64    \
+    android.hardware.gatekeeper@1.0-impl    \
 
 ifeq ($(TARGET_USES_CHINOOK_SENSORHUB),true)
 PRODUCT_PACKAGES += \
