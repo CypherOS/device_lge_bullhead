@@ -174,7 +174,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
-    android.hardware.contexthub@1.0-service \
     android.hardware.gnss@1.0-service \
     android.hardware.drm@1.0-service \
     android.hardware.light@2.0-service \
@@ -312,8 +311,9 @@ NANOHUB_SENSORHAL_DIRECT_REPORT_ENABLED := true
 PRODUCT_PACKAGES += \
     sensors.bullhead \
     activity_recognition.bullhead \
+	context_hub.default \
     android.hardware.sensors@1.0-impl \
-    android.hardware.contexthub@1.0-impl.nanohub
+    android.hardware.contexthub@1.0-impl
 
 # new gatekeeper HAL
 PRODUCT_PACKAGES +=                         \
