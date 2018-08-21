@@ -35,8 +35,3 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 $(call inherit-product, device/lge/bullhead/device.mk)
 $(call inherit-product-if-exists, vendor/lge/bullhead/bullhead-vendor.mk)
-
-PRODUCT_PACKAGES += \
-    Launcher3 \
-    WallpaperPicker
-
