@@ -162,29 +162,6 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 PRODUCT_PACKAGES += \
-    gralloc.msm8992 \
-    android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl \
-    hwcomposer.msm8992 \
-    libgenlock \
-    memtrack.msm8992 \
-    android.hardware.memtrack@1.0-impl
-
-# Light HAL
-PRODUCT_PACKAGES += \
-    lights.bullhead \
-    lights.vts \
-    android.hardware.light@2.0-impl
-
-# RenderScript HAL
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-
-PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libstagefrighthw \
     libOmxCore \
@@ -210,85 +187,19 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libvolumelistener
 
-# Dumpstate HAL
-PRODUCT_PACKAGES += \
-    android.hardware.dumpstate@1.0-service.bullhead
-
 PRODUCT_PACKAGES += \
     librmnetctl \
     rmnetcli
 
-PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.soundtrigger@2.0-impl
-
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-impl
-
 # GPS configuration
 PRODUCT_COPY_FILES += \
     device/lge/bullhead/gps.conf:system/etc/gps.conf
-
-# NFC packages
-PRODUCT_PACKAGES += \
-    libnfc-nci \
-    NfcNci \
-    Tag \
-    android.hardware.nfc@1.0-impl \
-    nfc_nci.msm8992 \
-
-# Keymaster HAL
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
-
-# Vibrator HAL
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl
-
-# Fingerprint HIDL implementation
-PRODUCT_PACKAGES += \
-    fingerprint.bullhead \
-    android.hardware.biometrics.fingerprint@2.1-service
-
-# Wi-Fi
-PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
-    libwpa_client \
-    hostapd \
-    wificond \
-    wifilogd \
-    wpa_supplicant \
-    wpa_supplicant.conf
-
-# Camera
-PRODUCT_PACKAGES += \
-    camera.msm8992 \
-    libcamera \
-    libmmcamera_interface \
-    libmmcamera_interface2 \
-    libmmjpeg_interface \
-    libqomx_core \
-    mm-qcamera-app \
-    android.hardware.camera.provider@2.4-impl \
-    camera.device@3.2-impl
 
 # Sensor & activity_recognition HAL
 TARGET_USES_NANOHUB_SENSORHAL := true
 NANOHUB_SENSORHAL_LID_STATE_ENABLED := true
 NANOHUB_SENSORHAL_SENSORLIST := $(LOCAL_PATH)/sensorhal/sensorlist.cpp
 NANOHUB_SENSORHAL_DIRECT_REPORT_ENABLED := true
-
-PRODUCT_PACKAGES += \
-    sensors.bullhead \
-    activity_recognition.bullhead \
-    context_hub.default \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.contexthub@1.0-impl \
-
-# new gatekeeper HAL
-PRODUCT_PACKAGES +=                         \
-    android.hardware.gatekeeper@1.0-impl    \
 
 ifeq ($(TARGET_USES_CHINOOK_SENSORHUB),true)
 PRODUCT_PACKAGES += \
@@ -485,11 +396,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.bt.bdaddr_path=/persist/bdaddr.txt
 
-# Bluetooth HAL
-PRODUCT_PACKAGES += \
-    libbt-vendor \
-    android.hardware.bluetooth@1.0-impl
-
 # limit dex2oat threads to improve thermals
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.boot-dex2oat-threads=4 \
@@ -508,24 +414,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # NFC/camera interaction workaround - DO NOT COPY TO NEW DEVICES
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.notify_nfc=1
-
-# Power HAL
-PRODUCT_PACKAGES += \
-    power.bullhead \
-    android.hardware.power@1.0-impl \
-
-# Thermal HAL
-PRODUCT_PACKAGES += \
-    thermal.bullhead \
-    android.hardware.thermal@1.0-impl \
-
-#GNSS HAL
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
-
-#USB HAL
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
 
 # Modem debugger/misc
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
@@ -564,6 +452,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+
+# Inherit device hal configuration
+$(call inherit-product, device/lge/bullhead/device_hals.mk)
 
 $(call inherit-product-if-exists, hardware/qcom/msm8994/msm8992.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8994/msm8994-gpu-vendor.mk)
