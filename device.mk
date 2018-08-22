@@ -51,20 +51,20 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/audio_effects.conf:system/etc/audio_effects.conf \
-    device/lge/bullhead/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/lge/bullhead/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    device/lge/bullhead/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
-    device/lge/bullhead/audio_policy_volumes_drc.xml:system/etc/audio_policy_volumes_drc.xml \
+    device/lge/bullhead/audio/audio_effects.conf:system/etc/audio_effects.conf \
+    device/lge/bullhead/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/lge/bullhead/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    device/lge/bullhead/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
+    device/lge/bullhead/audio/audio_policy_volumes_drc.xml:system/etc/audio_policy_volumes_drc.xml \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:system/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:system/etc/default_volume_tables.xml \
 
-#Sound Trigger
+# Sound Trigger
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    device/lge/bullhead/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
+    device/lge/bullhead/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    device/lge/bullhead/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
 
 # Input device files
 PRODUCT_COPY_FILES += \
