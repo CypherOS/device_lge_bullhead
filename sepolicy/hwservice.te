@@ -1,1 +1,2 @@
 type nxpnfc_hwservice, hwservice_manager_type;
+type power_hwservice, hwservice_manager_type;

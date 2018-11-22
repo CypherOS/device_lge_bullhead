@@ -1,1 +1,2 @@
+android.hardware.power::IPower                                  u:object_r:power_hwservice:s0
 vendor.nxp.nxpese::INxpEse                                      u:object_r:nxpnfc_hwservice:s0

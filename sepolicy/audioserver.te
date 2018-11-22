@@ -1,1 +1,3 @@
 allow audioserver kernel:system { module_request };
+
+dontaudit audioserver power_hwservice:hwservice_manager find;
